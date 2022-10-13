@@ -1,6 +1,6 @@
 const displayTime = () => {
     let a = new Date();
-    let hour = a.getHours();
+    let hour = a.getHours();    
     let min = a.getMinutes();
     let sec = a.getSeconds()
 
@@ -9,7 +9,8 @@ const displayTime = () => {
         document.getElementById("hour").innerHTML = hour;
         document.getElementById("session").innerHTML = "AM";
     } else {
-        document.getElementById("hour").innerHTML = hour - 12;
+        let noon=hour-12;
+        document.getElementById("hour").innerHTML = noon<10?"0"+noon:noon;
         document.getElementById("session").innerHTML = "PM";
     }
     document.getElementById("minutes").innerHTML = min;
